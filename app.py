@@ -213,20 +213,18 @@ section[data-testid="stSidebar"] [data-testid="stSelectbox"] input {
     color: #a9adc7 !important;
 }
 
-/* Main page headings */
-.main h1,
-.main h2,
-.main h3,
-.main h4 {
+[data-testid="stMarkdownContainer"] h1,
+[data-testid="stMarkdownContainer"] h2,
+[data-testid="stMarkdownContainer"] h3,
+[data-testid="stMarkdownContainer"] h4 {
     color: #f0f0f5 !important;
 }
 
-/* Markdown headings/text on the main page */
-[data-testid="stMarkdown"] h1,
-[data-testid="stMarkdown"] h2,
-[data-testid="stMarkdown"] h3,
-[data-testid="stMarkdown"] h4 {
-    color: #white !important;
+[data-testid="stMarkdownContainer"] h1 *,
+[data-testid="stMarkdownContainer"] h2 *,
+[data-testid="stMarkdownContainer"] h3 *,
+[data-testid="stMarkdownContainer"] h4 * {
+    color: #f0f0f5 !important;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -375,14 +373,18 @@ with left:
         c3.metric(f"Avg for {education_level}", fmt_inr(edu_avg), f"{pred - edu_avg:+,.0f}")
         st.markdown('</div>', unsafe_allow_html=True)
     else:
-        st.markdown("""
-        <div class="card">
-            <h4>👋 Get started</h4>
-            <p>Fill in the profile in the sidebar and click <b>Predict Salary</b> to see
-            an estimate along with how it compares to similar roles.</p>
-        </div>
-        """, unsafe_allow_html=True)
+      st.markdown("""
+<div class="card">
+<div style="color: #222222 !important; -webkit-text-fill-color: #222222 !important; font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;">
+👋 Get started
+</div>
 
+<div style="color: #333333 !important; -webkit-text-fill-color: #333333 !important; opacity: 1 !important; font-size: 1rem;">
+Fill in the profile in the sidebar and click <b>Predict Salary</b> to see
+an estimate along with how it compares to similar roles.
+</div>
+</div>
+""", unsafe_allow_html=True)
 with right:
     st.markdown('<div class="card">', unsafe_allow_html=True)
     st.markdown("#### Where this estimate sits in the market")
