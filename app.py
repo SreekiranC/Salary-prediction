@@ -226,7 +226,7 @@ section[data-testid="stSidebar"] [data-testid="stSelectbox"] input {
 [data-testid="stMarkdown"] h2,
 [data-testid="stMarkdown"] h3,
 [data-testid="stMarkdown"] h4 {
-    color: #f0f0f5 !important;
+    color: #white !important;
 }
 </style>
 """, unsafe_allow_html=True)
